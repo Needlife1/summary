@@ -20,7 +20,7 @@ h4 {
   --gutter: 50px;
   --side-small: 26;
   --side-big: 36;
-  --depth: 4000px;
+  --depth: 1800px;
   --transition: 0.75s cubic-bezier(0.075, 0.5, 0, 1);
 }
 
