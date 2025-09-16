@@ -1,120 +1,133 @@
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 h1,
 h2,
 h3,
 h4 {
-    font-weight: 100;
-    text-transform: uppercase;
-    width: min-content;
-    line-height: 1;
-
+  font-weight: 100;
+  text-transform: uppercase;
+  width: min-content;
+  line-height: 1;
 }
 
 :root {
-    --index: calc(1vw + 1vh);
-    --gutter: 50px;
-    --side-small: 26;
-    --side-big: 36;
-    --depth: 4000px;
-    --transition: .75s cubic-bezier(.075, .5, 0, 1);
+  --index: calc(1vw + 1vh);
+  --gutter: 50px;
+  --side-small: 26;
+  --side-big: 36;
+  --depth: 4000px;
+  --transition: 0.75s cubic-bezier(0.075, 0.5, 0, 1);
 }
 
 body {
-    background-color: #000;
-    color: #fff;
-    font-size: calc(var(--index) * .8);
-    font-family: "Raleway", sans-serif;
-    font-style: italic;
-    line-height: 1.75;
-    height: var(--depth);
-    font-weight: 300;
+  background-color: #000;
+  color: #fff;
+  font-size: calc(var(--index) * 0.8);
+  font-family: 'Raleway', sans-serif;
+  font-style: italic;
+  line-height: 1.75;
+  height: var(--depth);
+  font-weight: 300;
 }
 
 .container {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    perspective: 1500px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  perspective: 1500px;
 }
 
 .gallery {
-    transform-style: preserve-3d;
-    height: 100%;
+  transform-style: preserve-3d;
+  height: 100%;
 }
 
 .frame {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform var(--transition), opacity .75s ease;
-    will-change: transform, opacity;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition), opacity 0.75s ease;
+  will-change: transform, opacity;
 }
 
 .frame h1 {
-    text-align: center;
-    font-size: calc(var(--index)*3.3);
-
+  text-align: center;
+  font-size: calc(var(--index) * 3.3);
 }
 
 .frame-media {
-    position: relative;
-    width: calc(var(--index)* var(--side-small));
-    height: calc(var(--index)* var(--side-big));
-    background-position: center;
-    background-size: cover;
+  position: relative;
+  width: calc(var(--index) * var(--side-small));
+  height: calc(var(--index) * var(--side-big));
+  background-position: center;
+  background-size: cover;
 }
 
 .frame-media_left {
-    right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+  right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
 }
 
 .frame-media_right {
-    left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+  left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
 }
 
 .frame_bg {
-    background-color: rgb(0 0 0 / .87);
-    pointer-events: none;
+  background-color: rgb(0 0 0 / 0.87);
+  pointer-events: none;
 }
 
 .text-left {
-    position: relative;
-    right: 18vw;
+  position: relative;
+  right: 18vw;
 }
 
 .text-right {
-    position: relative;
-    left: 18vw;
+  position: relative;
+  left: 18vw;
 }
 
 .frame-title {
-    font-size: calc(var(--index)*3);
+  font-size: calc(var(--index) * 3);
 }
 
 .frame-text {
-    max-width: 30vw;
-    margin-top: 5vh;
+  max-width: 30vw;
+  margin-top: 5vh;
 }
 
 .frame-links {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.frame-links>a {
-    color: bisque;
-    text-decoration: none;
-    font-weight: 100;
+.frame-links > a {
+  color: bisque;
+  text-decoration: none;
+  font-weight: 100;
 }
 
-.frame-links>:hover {
-    filter: brightness(1.1);
+.frame-links > :hover {
+  filter: brightness(1.1);
+}
+
+@media (max-width: 600px) {
+  .frame {
+    margin: 3vw auto !important;
+  }
+  .frame-media {
+    width: calc(var(--index) * 10) !important;
+    height: calc(var(--index) * 14) !important;
+    min-width: 120px !important;
+    min-height: 140px !important;
+    max-width: 80vw !important;
+    max-height: 30vh !important;
+  }
 }
